@@ -316,6 +316,18 @@ html.lenis,html.lenis body{height:auto}
 @media (hover:hover){.client-list:hover li{opacity:.28}.client-list li:hover{opacity:1}}
 .uline{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .5s cubic-bezier(.6,0,.2,1);text-decoration:none}
 .uline:hover{background-size:100% 1px}
+
+@media (max-width:640px){
+  .price{min-width:0;table-layout:fixed}
+  .price th,.price td{padding:13px 6px 13px 0}
+  .price thead th{font-size:10px;letter-spacing:.06em}
+  .price th:nth-child(1),.price td:nth-child(1){width:27%}
+  .price thead th{white-space:nowrap}
+  .price td:first-child{font-size:20px}
+  .price td.n{font-size:13.5px;letter-spacing:-.02em}
+  .price th:last-child,.price td:last-child{text-align:right;padding-right:0}
+  .price-wrap{overflow:visible;margin-top:32px}
+}
 </style>
 </head>
 <body>
