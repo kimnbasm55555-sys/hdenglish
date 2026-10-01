@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:title" content="HD영어 임희대 | 영어 인터뷰 코칭">
+<meta property="og:description" content="영어 인터뷰 날짜가 나왔다면 오늘 상담하세요. 18년 비즈니스 영어 코칭, 펜실베이니아 주립대 졸업.">
+<title>HD영어 임희대</title>
+<meta name="description" content="영어 인터뷰 날짜가 잡혔다면 HD영어 임희대에게 상담하세요. 펜실베이니아 주립대 졸업, 미국 TESOL 수료, 18년 비즈니스 영어 코칭.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400;1,6..72,500&family=Noto+Serif+KR:wght@600;700;900&display=swap">
+<style>
+/* Layout: 면접 준비 노트 — 왼쪽 정렬 본문 + 오른쪽 프롬프터(면접 질문이 흐르는 칸), 섹션은 굵은 괘선으로만 구분 */
+:root{
+  --paper:#f5f6f3;
+  --paper-2:#eceee8;
+  --ink:#151c28;
+  --ink-2:#4a5260;
+  --rule:#cfd3cb;
+  --pen:#b8262b;
+  --band:#151c28;
+  --band-ink:#f5f6f3;
+  --f-display:"Noto Serif KR","Nanum Myeongjo",serif;
+  --f-en:"Newsreader","Times New Roman",serif;
+  --f-body:"IBM Plex Sans KR","Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --w:1120px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#12161d;--paper-2:#1a2029;--ink:#e9ebe6;--ink-2:#a9afb8;--rule:#2d3440;--pen:#e0605b;--band:#e9ebe6;--band-ink:#12161d;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#12161d;--paper-2:#1a2029;--ink:#e9ebe6;--ink-2:#a9afb8;--rule:#2d3440;--pen:#e0605b;--band:#e9ebe6;--band-ink:#12161d;color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.7;word-break:keep-all;-webkit-font-smoothing:antialiased;padding-bottom:72px}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--w);margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.3;letter-spacing:-0.01em}
+p{margin:0}
+.label{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+:focus-visible{outline:2px solid var(--pen);outline-offset:3px}
+
+/* 상단 */
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:18px;border-bottom:1px solid var(--rule)}
+.brand{display:flex;align-items:baseline;gap:10px;text-decoration:none}
+.brand b{font-family:var(--f-en);font-weight:600;font-size:22px;letter-spacing:-.02em}
+.brand span{font-size:14px;color:var(--ink-2)}
+.top-call{font-family:var(--f-mono);font-size:14px;text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:1px}
+
+/* 히어로 */
+.hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:56px;padding-block:64px 56px;align-items:start}
+.hero h1{font-size:clamp(32px,5.2vw,58px);font-weight:900;line-height:1.22}
+.hero h1 .u{position:relative;white-space:nowrap}
+.hero h1 .u::after{content:"";position:absolute;left:-2%;right:-2%;bottom:.02em;height:.16em;background:var(--pen);border-radius:2px;transform:rotate(-1deg);transform-origin:left;animation:stroke .9s .3s cubic-bezier(.6,0,.2,1) both}
+@keyframes stroke{from{transform:rotate(-1deg) scaleX(0)}to{transform:rotate(-1deg) scaleX(1)}}
+.hero .lead{margin-top:24px;font-size:18px;color:var(--ink-2);max-width:34em}
+.creds{margin-top:32px;display:flex;flex-wrap:wrap;gap:10px 28px;padding-top:20px;border-top:1px solid var(--rule)}
+.creds div{display:flex;flex-direction:column}
+.creds strong{font-family:var(--f-mono);font-size:22px;font-weight:500;font-variant-numeric:tabular-nums}
+.creds small{font-size:13px;color:var(--ink-2)}
+.cta-row{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;font-weight:600;font-size:16px;text-decoration:none;border:1.5px solid var(--ink);background:var(--ink);color:var(--paper);cursor:pointer;font-family:var(--f-body)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn .num{font-family:var(--f-mono);font-weight:500}
+
+/* 프롬프터 */
+.prompter{border:1.5px solid var(--ink);background:var(--paper-2);position:relative}
+.prompter-head{display:flex;justify-content:space-between;padding:10px 14px;border-bottom:1px solid var(--rule)}
+.prompter-head .rec{display:inline-flex;align-items:center;gap:6px}
+.prompter-head .rec i{width:8px;height:8px;border-radius:50%;background:var(--pen);animation:blink 1.6s infinite}
+@keyframes blink{50%{opacity:.25}}
+.prompter-view{height:300px;overflow:hidden;position:relative;-webkit-mask-image:linear-gradient(transparent,#000 22%,#000 78%,transparent);mask-image:linear-gradient(transparent,#000 22%,#000 78%,transparent)}
+.prompter ol{list-style:none;margin:0;padding:0 22px;animation:roll 36s linear infinite}
+.prompter li{font-family:var(--f-en);font-style:italic;font-size:22px;line-height:1.35;padding-block:14px;border-bottom:1px dashed var(--rule)}
+.prompter li small{display:block;font-family:var(--f-body);font-style:normal;font-size:13px;color:var(--ink-2);margin-top:4px}
+@keyframes roll{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+.prompter-foot{padding:12px 14px;border-top:1px solid var(--rule);font-size:13px;color:var(--ink-2)}
+
+/* D-day */
+.dday{margin-top:16px;padding:16px;border:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+.dday label{font-size:14px;font-weight:600}
+.dday input{font-family:var(--f-mono);font-size:15px;padding:8px 10px;border:1px solid var(--ink-2);background:var(--paper);color:var(--ink)}
+.dday output{font-size:15px;flex-basis:100%}
+.dday output b{font-family:var(--f-mono);color:var(--pen);font-size:20px}
+
+/* 합격처 띠 */
+.band{background:var(--band);color:var(--band-ink);padding-block:22px;overflow:hidden}
+.band .label{color:var(--band-ink);opacity:.7;padding-inline:20px;max-width:var(--w);margin:0 auto 12px}
+.marquee{display:flex;width:max-content;animation:slide 60s linear infinite}
+.marquee.rev{animation-direction:reverse;animation-duration:70s;margin-top:10px;opacity:.75}
+.marquee span{font-family:var(--f-en);font-size:28px;white-space:nowrap;padding-inline:22px;position:relative}
+.marquee span::after{content:"/";position:absolute;right:-6px;opacity:.35}
+.marquee.rev span{font-family:var(--f-body);font-size:17px}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.band:hover .marquee{animation-play-state:paused}
+
+/* 섹션 공통 */
+section.sec{padding-block:80px;border-bottom:2px solid var(--ink)}
+.sec-head{display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px;margin-bottom:40px}
+.sec-head h2{font-size:clamp(26px,3.4vw,38px);font-weight:700}
+.sec-body{display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px}
+.sec-body>.col{grid-column:2;min-width:0}
+
+/* 소개 */
+.story{font-size:18px;max-width:36em;display:grid;gap:18px}
+.story .first{font-family:var(--f-display);font-size:24px;font-weight:700;line-height:1.5}
+.who{margin-top:40px;display:grid;gap:0;border-top:1px solid var(--rule)}
+.who li{list-style:none;display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;padding-block:16px;border-bottom:1px solid var(--rule)}
+.who ul{margin:0;padding:0}
+.who li::before{content:"✓";font-weight:700;color:var(--pen)}
+
+/* 진행 순서 */
+.steps{margin:0;padding:0;list-style:none;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:64px minmax(0,1fr);gap:16px;padding-block:22px;border-top:1px solid var(--rule)}
+.steps li::before{content:counter(s,decimal-leading-zero);font-family:var(--f-mono);font-size:14px;color:var(--pen);padding-top:4px}
+.steps h3{font-size:20px;font-weight:700;margin-bottom:6px}
+.steps p{color:var(--ink-2);max-width:40em}
+.note{margin-top:24px;font-size:14px;color:var(--ink-2);padding-left:14px;border-left:2px solid var(--rule)}
+
+/* 후기 */
+.proof{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:40px;align-items:start}
+.quotes{display:grid;gap:28px}
+blockquote{margin:0;padding:0 0 24px;border-bottom:1px solid var(--rule)}
+blockquote p{font-size:17px;line-height:1.75}
+blockquote footer{margin-top:10px;font-size:13px;color:var(--ink-2);font-family:var(--f-mono)}
+.shots{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+figure{margin:0}
+figcaption{font-size:13px;color:var(--ink-2);margin-top:8px;line-height:1.5}
+.zoom{all:unset;cursor:zoom-in;display:block;border:1px solid var(--rule);background:#fff}
+.zoom:focus-visible{outline:2px solid var(--pen);outline-offset:3px}
+.zoom img{width:100%;height:auto}
+
+/* 실적 */
+.record{width:100%;border-collapse:collapse}
+.record th,.record td{text-align:left;padding:14px 12px 14px 0;border-top:1px solid var(--rule);vertical-align:top}
+.record th{font-weight:600;width:42%;font-size:16px}
+.record td{color:var(--ink-2);font-size:15px}
+.record .yr{font-family:var(--f-mono);font-size:13px;color:var(--ink-2);display:block;font-weight:400;margin-top:2px}
+.clients{margin-top:36px;font-size:15px;color:var(--ink-2);line-height:2}
+.clients b{color:var(--ink);font-weight:600;margin-right:8px}
+.mails{margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+
+/* 학력 */
+.edu{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:28px;align-items:start}
+.edu-side{display:grid;gap:24px}
+.cert-meta{margin-top:12px;display:grid;gap:2px}
+.cert-meta b{font-family:var(--f-en);font-size:20px;font-weight:600}
+.cert-meta span{font-size:14px;color:var(--ink-2)}
+.verify{margin-top:36px;padding:20px;background:var(--paper-2);display:grid;gap:8px}
+.verify .no{font-family:var(--f-mono);font-size:18px}
+
+/* 수업료 */
+.price-wrap{overflow-x:auto}
+.price{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;min-width:420px}
+.price th,.price td{padding:16px 12px 16px 0;border-top:1px solid var(--rule);text-align:left}
+.price thead th{font-size:12px;font-family:var(--f-mono);letter-spacing:.1em;color:var(--ink-2);font-weight:500;border-top:2px solid var(--ink)}
+.price td.n{font-family:var(--f-mono);font-size:17px}
+.price tr.best td{color:var(--ink)}
+.price tr.best td:first-child::after{content:"1회 14만원";margin-left:10px;font-size:12px;color:var(--pen);font-family:var(--f-mono)}
+.extra{margin-top:36px;display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.extra h3{font-size:19px;margin-bottom:10px}
+.extra ul{margin:0;padding-left:18px;color:var(--ink-2);font-size:15px}
+.rules{margin-top:40px;display:grid;gap:10px;font-size:15px;color:var(--ink-2);max-width:44em}
+.rules b{color:var(--ink)}
+
+/* 상담 */
+.contact{padding-block:88px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:end}
+.contact h2{font-size:clamp(30px,4.4vw,48px);font-weight:900}
+.contact p{margin-top:16px;color:var(--ink-2);font-size:17px;max-width:30em}
+.phone{font-family:var(--f-mono);font-size:clamp(30px,5vw,46px);font-weight:500;letter-spacing:-.01em;user-select:all}
+.contact .cta-row{margin-top:20px}
+.copied{font-size:14px;color:var(--pen);min-height:1.5em;margin-top:8px}
+
+footer.foot{border-top:1px solid var(--rule);padding-block:28px;font-size:13px;color:var(--ink-2);display:flex;flex-wrap:wrap;gap:8px 24px}
+
+/* 하단 고정 바 (모바일) */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:20;display:none;background:var(--ink);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));gap:10px}
+.dock a{flex:1;text-align:center;padding:12px;font-weight:600;text-decoration:none;color:var(--paper);border:1px solid var(--paper)}
+.dock a.main{background:var(--paper);color:var(--ink)}
+
+/* 확대 보기 */
+dialog{border:0;padding:0;max-width:min(92vw,900px);max-height:92vh;background:var(--paper);color:var(--ink)}
+dialog::backdrop{background:rgba(10,14,20,.78)}
+dialog img{max-height:82vh;width:auto;margin:0 auto}
+dialog .bar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 14px;font-size:14px;border-bottom:1px solid var(--rule)}
+dialog button{font:inherit;background:none;border:1px solid var(--ink);color:var(--ink);padding:4px 12px;cursor:pointer}
+
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr;gap:36px;padding-block:40px}
+  .sec-head,.sec-body{grid-template-columns:1fr;gap:10px}
+  .sec-body>.col{grid-column:1}
+  section.sec{padding-block:56px}
+  .proof,.edu,.contact,.extra{grid-template-columns:1fr}
+  .dock{display:flex}
+  .top-call{display:none}
+  .prompter-view{height:220px}
+}
+@media (max-width:480px){
+  .shots,.mails{grid-template-columns:1fr}
+  .marquee span{font-size:22px}
+  .record th{width:auto;display:block;padding-bottom:0;border-top:1px solid var(--rule)}
+  .record td{display:block;border-top:0;padding-top:4px}
+}
+@media (prefers-reduced-motion:reduce){
+  .prompter ol,.marquee,.prompter-head .rec i{animation:none}
+  .hero h1 .u::after{animation:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#top" id="top"><b>HD English</b><span>임희대 · 비즈니스 영어 코치</span></a>
+    <a class="top-call" href="tel:01024413456">010-2441-3456</a>
+  </header>
+
+  <div class="hero">
+    <div>
+      <p class="label">영어 인터뷰 · 컨퍼런스콜 · 영어 발표</p>
+      <h1 style="margin-top:16px">영어 인터뷰 날짜가 나왔다면 <span class="u">오늘 상담하세요.</span></h1>
+      <p class="lead">남은 기간에 맞춰 답변 방향을 잡고, 스크립트를 함께 다듬고, 실제 면접처럼 연습합니다. 18년 동안 직장인 3,000명 이상과 이 과정을 해왔습니다.</p>
+
+      <div class="creds">
+        <div><strong>18년</strong><small>비즈니스 영어 코칭</small></div>
+        <div><strong>3,000+</strong><small>지도한 직장인</small></div>
+        <div><strong>5.0</strong><small>숨고 평점 · 리뷰 135건</small></div>
+        <div><strong>B.A.</strong><small>펜실베이니아 주립대 졸업</small></div>
+      </div>
+
+      <div class="cta-row">
+        <a class="btn" href="tel:01024413456">전화 상담 <span class="num">010-2441-3456</span></a>
+        <a class="btn ghost" href="#price">수업료 보기</a>
+      </div>
+    </div>
+
+    <div>
+      <!-- 영상 자리: 임희대 님 자기소개 영상이 준비되면 아래 prompter 블록 대신 사용하세요.
+      <video src="img/intro.mp4" poster="img/intro-poster.webp" controls playsinline style="width:100%;border:1.5px solid var(--ink)"></video>
+      -->
+      <div class="prompter" aria-label="실제 영어 인터뷰에서 자주 나오는 질문">
+        <div class="prompter-head label"><span class="rec"><i></i>Mock interview</span><span>50 min</span></div>
+        <div class="prompter-view">
+          <ol>
+            <li>Tell me about yourself.<small>자기소개 — 2분 안에 강점이 보이도록</small></li>
+            <li>Why do you want to join our company?<small>지원 동기</small></li>
+            <li>Walk me through your resume.<small>경력 흐름 설명</small></li>
+            <li>Tell me about a time you failed.<small>실패 경험과 배운 점</small></li>
+            <li>How do you handle conflict with a colleague?<small>협업 · 갈등 해결</small></li>
+            <li>What would you do in your first 90 days?<small>입사 후 계획</small></li>
+            <li>Do you have any questions for us?<small>마지막 질문</small></li>
+            <li aria-hidden="true">Tell me about yourself.<small>자기소개 — 2분 안에 강점이 보이도록</small></li>
+            <li aria-hidden="true">Why do you want to join our company?<small>지원 동기</small></li>
+            <li aria-hidden="true">Walk me through your resume.<small>경력 흐름 설명</small></li>
+            <li aria-hidden="true">Tell me about a time you failed.<small>실패 경험과 배운 점</small></li>
+            <li aria-hidden="true">How do you handle conflict with a colleague?<small>협업 · 갈등 해결</small></li>
+            <li aria-hidden="true">What would you do in your first 90 days?<small>입사 후 계획</small></li>
+            <li aria-hidden="true">Do you have any questions for us?<small>마지막 질문</small></li>
+          </ol>
+        </div>
+        <p class="prompter-foot">면접 유형에 맞춰 예상 질문을 뽑고, 답변을 함께 만듭니다.</p>
+      </div>
+
+      <div class="dday">
+        <label for="iv-date">면접일</label>
+        <input type="date" id="iv-date">
+        <output id="dday-out" for="iv-date">면접일을 고르면 남은 날짜가 나옵니다. 인터뷰 과정은 31일 안에 정한 횟수로 진행합니다.</output>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="band" aria-label="수강생 합격처">
+  <p class="label">수강생 합격 · 진학 · 선발처</p>
+  <div class="marquee" aria-hidden="true">
+    <span>Kim &amp; Chang</span><span>Apple Korea</span><span>Netflix</span><span>Google Korea</span><span>Bain &amp; Company</span><span>Riot Games</span><span>Oracle</span><span>Novo Nordisk</span><span>DuPont</span><span>Zeiss</span><span>KLA</span><span>Red Bull</span><span>Citibank</span><span>Société Générale</span><span>Aptiv</span><span>Columbia Threadneedle</span><span>MIT Sloan MBA</span>
+    <span>Kim &amp; Chang</span><span>Apple Korea</span><span>Netflix</span><span>Google Korea</span><span>Bain &amp; Company</span><span>Riot Games</span><span>Oracle</span><span>Novo Nordisk</span><span>DuPont</span><span>Zeiss</span><span>KLA</span><span>Red Bull</span><span>Citibank</span><span>Société Générale</span><span>Aptiv</span><span>Columbia Threadneedle</span><span>MIT Sloan MBA</span>
+  </div>
+  <div class="marquee rev" aria-hidden="true">
+    <span>김앤장 법률사무소</span><span>기아</span><span>쿠팡</span><span>한미약품</span><span>쿠콘</span><span>제네시스 독일</span><span>스페셜라이즈드</span><span>과학기술정책연구원</span><span>University of Washington MBA</span><span>성균관대 MBA</span><span>주재원 선발 · KPMG</span><span>주재원 선발 · 신한은행</span><span>주재원 선발 · SK온</span><span>주재원 선발 · 한화큐셀</span>
+    <span>김앤장 법률사무소</span><span>기아</span><span>쿠팡</span><span>한미약품</span><span>쿠콘</span><span>제네시스 독일</span><span>스페셜라이즈드</span><span>과학기술정책연구원</span><span>University of Washington MBA</span><span>성균관대 MBA</span><span>주재원 선발 · KPMG</span><span>주재원 선발 · 신한은행</span><span>주재원 선발 · SK온</span><span>주재원 선발 · 한화큐셀</span>
+  </div>
+  <p class="label" style="margin-top:12px;margin-bottom:0;text-transform:none;letter-spacing:.02em">수강생이 합격하거나 선발된 곳입니다.</p>
+</div>
+
+<main class="wrap">
+  <section class="sec" id="about">
+    <div class="sec-head"><p class="label">About</p><h2>영어를 못하던 사람이 가르칩니다.</h2></div>
+    <div class="sec-body"><div class="col">
+      <div class="story">
+        <p class="first">저는 초등학교 때 반에서 꼴찌였습니다.</p>
+        <p>그래서 영어가 입 밖으로 나오지 않는 답답함을 압니다. 미국 펜실베이니아 주립대에서 노사관계학을 전공했고, 미국에서 TESOL 과정을 마친 뒤 난민 학생들의 정착 영어를 가르치는 일로 강의를 시작했습니다.</p>
+        <p>이후 18년 동안 대기업 임원, 스타트업 대표, 외국계 이직 준비생, 학회 발표를 앞둔 의료진까지 직장인 3,000명 이상을 1:1로 만났습니다. 수업은 영어 표현만 알려주는 시간이 아닙니다. 지금까지 쌓은 경력에서 강점을 찾아 면접관이 기억할 이야기로 만드는 시간입니다.</p>
+      </div>
+      <div class="who">
+        <p class="label" style="padding-block:16px 0">이런 분이 찾아옵니다</p>
+        <ul>
+          <li><span>외국계 기업 영어 인터뷰 날짜가 갑자기 잡힌 분</span></li>
+          <li><span>영어 인터뷰가 처음이라 어디서부터 준비할지 모르는 분</span></li>
+          <li><span>준비한 답변이 맞는 방향인지 확인받고 싶은 분</span></li>
+          <li><span>영어 컨퍼런스콜, 사내 발표, CES 같은 전시회 발표를 앞둔 분</span></li>
+        </ul>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="sec" id="process">
+    <div class="sec-head"><p class="label">Interview course</p><h2>인터뷰 수업은 이렇게 진행합니다.</h2></div>
+    <div class="sec-body"><div class="col">
+      <ol class="steps">
+        <li><div><h3>상담과 레벨 확인</h3><p>영어를 직접 들어보고, 면접 유형과 남은 기간을 확인해 수업 횟수와 전략을 정합니다.</p></div></li>
+        <li><div><h3>경력에서 이야기 찾기</h3><p>자기소개서와 업무 경험을 깊게 파고들어 강조할 강점을 HR의 시선으로 골라냅니다.</p></div></li>
+        <li><div><h3>스크립트 공동 작업</h3><p>번역해 드리지 않습니다. 단어와 표현을 함께 조율하며 본인이 말할 수 있는 문장으로 만듭니다.</p></div></li>
+        <li><div><h3>발음과 표현 교정</h3><p>뜻은 맞아도 어색하게 들리는 표현, 상대에게 다르게 들리는 뉘앙스를 바로잡습니다.</p></div></li>
+        <li><div><h3>모의 인터뷰와 리뷰</h3><p>실제 질문으로 연습하고, 수업 뒤 리뷰로 복습 시간이 부족한 직장인을 돕습니다.</p></div></li>
+      </ol>
+      <p class="note">온라인 수업은 Google Meet으로 진행하며 1회 50분입니다. 대면 수업은 고양시 덕양구 지축동 인근에서 진행합니다.</p>
+    </div></div>
+  </section>
+
+  <section class="sec" id="reviews">
+    <div class="sec-head"><p class="label">Results</p><h2>수강생이 직접 보낸 소식입니다.</h2></div>
+    <div class="sec-body"><div class="col">
+      <div class="proof">
+        <div class="quotes">
+          <blockquote>
+            <p>상담인데도 레벨 테스트와 면접 유형 파악, 남은 시간에 맞는 전략까지 짜 주셨습니다. 1달도 안 남은 기간 동안 함께 뛰어주는 러닝크루 같은 선생님이었습니다.</p>
+            <footer>서** · 면접 컨설팅 · 숨고 결제인증 리뷰</footer>
+          </blockquote>
+          <blockquote>
+            <p>영어면접 준비만이 아니라 제 커리어가 정리됐습니다. 강조해야 할 경력을 HR의 시선으로 볼 수 있었고 이력서까지 업그레이드했습니다.</p>
+            <footer>최** · 비즈니스 영어 · 숨고 결제인증 리뷰</footer>
+          </blockquote>
+          <blockquote>
+            <p>급하게 영문 IR 피칭을 준비해야 했는데, 핵심만 짚어서 스크립트부터 전략까지 짜 주셔서 최종 선정되었습니다.</p>
+            <footer>고** · 비즈니스 영어 · 숨고 결제인증 리뷰</footer>
+          </blockquote>
+        </div>
+        <div class="shots">
+          <figure>
+            <button class="zoom" type="button" data-full="img/proof-kia.webp" data-cap="기아 실무 PT 면접 합격 소식"><img src="img/proof-kia.webp" alt="기아 채용 결과 안내 화면과 '선생님 덕분에 1차 됐네요' 메시지" loading="lazy" width="620" height="997"></button>
+            <figcaption>기아 실무 PT 면접 합격 소식</figcaption>
+          </figure>
+          <figure>
+            <button class="zoom" type="button" data-full="img/proof-kakao.webp" data-cap="인터뷰를 마친 수강생의 메시지"><img src="img/proof-kakao.webp" alt="수강생이 인터뷰 후 보낸 카카오톡 메시지" loading="lazy" width="475" height="1000"></button>
+            <figcaption>"딱 저희 공부한 질문들만 나왔습니다."</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="sec" id="record">
+    <div class="sec-head"><p class="label">Corporate</p><h2>기업 강의와 통역 실적입니다.</h2></div>
+    <div class="sec-body"><div class="col">
+      <table class="record">
+        <tr><th>한국수출입은행<span class="yr">2018 – 2021</span></th><td>비즈니스 영어 강사. 계약 조건, 비즈니스 이메일, 발표와 미팅 영어</td></tr>
+        <tr><th>코리아헤럴드<span class="yr">2018 – 2021</span></th><td>비즈니스 영어 강사. 프레젠테이션과 비즈니스 영어</td></tr>
+        <tr><th>LG전자 VC사업부 인천캠퍼스</th><td>상주 강사, 기술 통번역</td></tr>
+        <tr><th>SK하이닉스</th><td>임원 인하우스 수업, 기술 통역</td></tr>
+        <tr><th>삼성엔지니어링 알제리 프로젝트</th><td>내화 분야 기술 통역과 번역</td></tr>
+        <tr><th>Elbit Systems</th><td>공군 수송기 조종실 업그레이드 프로젝트 기술 통번역</td></tr>
+        <tr><th>현대제철 · SK플라즈마 · Fossil Korea</th><td>현장 설치 통역, GMP 관련 통역, 영문 프레젠테이션 통역</td></tr>
+        <tr><th>Millersville, 미국<span class="yr">2008 – 2010</span></th><td>미국에 정착한 난민 학생 대상 영어 교육</td></tr>
+      </table>
+      <p class="clients"><b>1:1 수업을 진행한 기업</b>삼성전자 · 현대자동차 · 현대모비스 · SK이노베이션 · LG전자 · CJ올리브영 · 코리안리 · Citibank · Netflix · Microsoft · KPMG · EY · 법무법인 세종 · 외교부 · 서울대학교병원 · 하나은행 · SC제일은행 · 신한은행 · 인천국제공항공사 · 엑슨모빌 코리아 · 로레알 · 까르띠에</p>
+      <div class="mails">
+        <figure>
+          <button class="zoom" type="button" data-full="img/proof-lg-1.webp" data-cap="LG전자 배터리팩생산기술팀의 감사 메일"><img src="img/proof-lg-1.webp" alt="LG전자 배터리팩생산기술팀 직원이 보낸 감사 메일" loading="lazy" width="638" height="805"></button>
+          <figcaption>LG전자 배터리팩생산기술팀. GM 리더십이 참석한 피어 리뷰 발표를 짧은 기간에 준비했습니다.</figcaption>
+        </figure>
+        <figure>
+          <button class="zoom" type="button" data-full="img/proof-lg-2.webp" data-cap="LG전자 ADAS선행개발팀의 감사 메일"><img src="img/proof-lg-2.webp" alt="LG전자 ADAS선행개발팀 직원이 보낸 감사 메일" loading="lazy" width="690" height="793"></button>
+          <figcaption>LG전자 ADAS선행개발팀. CES와 디트로이트 모터쇼 영어 발표 자료를 리뷰했습니다.</figcaption>
+        </figure>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="sec" id="education">
+    <div class="sec-head"><p class="label">Education</p><h2>학력과 자격은 원본으로 확인하실 수 있습니다.</h2></div>
+    <div class="sec-body"><div class="col">
+      <div class="edu">
+        <figure>
+          <button class="zoom" type="button" data-full="img/diploma.webp" data-cap="The Pennsylvania State University 학위증"><img src="img/diploma.webp" alt="펜실베이니아 주립대 학사 학위증, Hee Dae Lim, Labor and Industrial Relations, 2008년 8월" loading="lazy" width="1000" height="845"></button>
+          <div class="cert-meta"><b>The Pennsylvania State University</b><span>Bachelor of Arts · Labor and Industrial Relations · 2008년 8월</span></div>
+        </figure>
+        <div class="edu-side">
+          <figure>
+            <button class="zoom" type="button" data-full="img/tesol-cert.webp" data-cap="TESOL 수료증"><img src="img/tesol-cert.webp" alt="University of the Nations TESOL 수료증, Heedae Lim, 2009년 11월 13일" loading="lazy" width="688" height="918"></button>
+            <div class="cert-meta"><b>TESOL Certificate</b><span>University of the Nations · 미국 펜실베이니아주 레바논 · 2009년</span></div>
+          </figure>
+          <figure>
+            <button class="zoom" type="button" data-full="img/tesol-letter.webp" data-cap="TESOL 과정 이수 확인서"><img src="img/tesol-letter.webp" alt="TESOL 과정 이수 확인서" loading="lazy" width="1200" height="1678" style="aspect-ratio:1200/600;object-fit:cover;object-position:top"></button>
+            <figcaption>이수 확인서. 4주 전일제 집중 과정으로 강의 100시간, 과제 40시간, 실습 26시간을 마쳤습니다.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="verify">
+        <p class="label">Apostille</p>
+        <p>미국 테네시주 국무부가 발행한 아포스티유 확인서를 보유하고 있습니다. 문서번호로 테네시주 공식 사이트에서 누구나 진위를 조회할 수 있습니다.</p>
+        <p class="no">No. 18-15719 · 2018. 10. 26.</p>
+        <p><button class="zoom" type="button" data-full="img/apostille.webp" data-cap="아포스티유 확인서" style="all:unset;cursor:pointer;border-bottom:1px solid var(--ink)">확인서 원본 보기</button></p>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="sec" id="price">
+    <div class="sec-head"><p class="label">Tuition</p><h2>수업료는 모두 공개합니다.</h2></div>
+    <div class="sec-body"><div class="col">
+      <p class="label" style="margin-bottom:8px">온라인 수업 · Google Meet · 1회 50분</p>
+      <div class="price-wrap">
+        <table class="price">
+          <thead><tr><th>횟수</th><th>수업료</th><th>1회당</th></tr></thead>
+          <tbody>
+            <tr><td>1회</td><td class="n">250,000원</td><td class="n">250,000원</td></tr>
+            <tr><td>4회</td><td class="n">720,000원</td><td class="n">180,000원</td></tr>
+            <tr><td>12회</td><td class="n">1,920,000원</td><td class="n">160,000원</td></tr>
+            <tr class="best"><td>20회</td><td class="n">2,800,000원</td><td class="n">140,000원</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="extra">
+        <div>
+          <h3>대면 수업</h3>
+          <ul>
+            <li>1회 250,000원, 최소 2회 이상 예약</li>
+            <li>교통비 50,000원 별도 (왕복 2시간 기준)</li>
+            <li>스크립트 공동 작업 포함</li>
+          </ul>
+        </div>
+        <div>
+          <h3>비즈니스 · 기술 통역</h3>
+          <ul>
+            <li>기본 2시간 1,250,000원</li>
+            <li>실무자와 1시간 이상 사전 미팅</li>
+            <li>이동 거리에 따라 교통비 별도</li>
+          </ul>
+        </div>
+      </div>
+      <div class="rules">
+        <p class="label">수업 규정</p>
+        <p><b>선불 결제.</b> 모든 예약은 입금을 마친 뒤 확정됩니다.</p>
+        <p><b>당일 변경 불가.</b> 당일 취소나 시간 변경은 수업료가 100% 차감됩니다. 변경은 하루 전까지 알려주세요.</p>
+        <p><b>소진 기간.</b> 정한 횟수는 31일 안에 사용합니다. 단기 인터뷰 과정은 1차 면접 전날까지 소진하며, 남은 횟수는 환불되지 않으니 횟수를 신중하게 정해 주세요.</p>
+        <p><b>중도 환불.</b> 진행한 횟수를 차감한 뒤 환불합니다. 전화 리뷰와 인터뷰 준비 시간도 수업으로 계산합니다.</p>
+        <p><b>수업 외 검토.</b> 이메일이나 발표 스크립트 검토는 사용한 시간만큼 수업 시간에서 차감합니다.</p>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div>
+      <p class="label">Contact</p>
+      <h2 style="margin-top:12px">면접 회사와 날짜를 알려주세요.</h2>
+      <p>상담 전화에서 영어를 짧게 들어보고, 남은 기간에 맞는 수업 횟수를 안내해 드립니다. 문자로 남겨주시면 확인 후 연락드립니다.</p>
+    </div>
+    <div>
+      <p class="label">상담 전화 · 문자</p>
+      <p class="phone" id="phone">010-2441-3456</p>
+      <div class="cta-row">
+        <a class="btn" href="tel:01024413456">전화하기</a>
+        <a class="btn ghost" href="sms:01024413456">문자 보내기</a>
+        <button class="btn ghost" type="button" id="copy-btn">번호 복사</button>
+      </div>
+      <p class="copied" id="copied" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span>HD영어 · 임희대</span>
+    <span>경기 고양시 · 온라인 전국</span>
+    <span>세금계산서 발행 가능</span>
+  </footer>
+</main>
+
+<nav class="dock" aria-label="빠른 상담">
+  <a class="main" href="tel:01024413456">전화 상담</a>
+  <a href="sms:01024413456">문자 보내기</a>
+</nav>
+
+<dialog id="viewer">
+  <div class="bar"><span id="viewer-cap"></span><button type="button" id="viewer-close">닫기</button></div>
+  <img id="viewer-img" src="" alt="">
+</dialog>
+
+<script>
+(function(){
+  // D-day
+  var input=document.getElementById('iv-date'),out=document.getElementById('dday-out');
+  input.addEventListener('change',function(){
+    if(!input.value){return}
+    var p=input.value.split('-'),d=new Date(+p[0],p[1]-1,+p[2]);
+    var t=new Date();t.setHours(0,0,0,0);
+    var n=Math.round((d-t)/86400000);
+    if(n<0){out.textContent='이미 지난 날짜입니다. 면접일을 다시 골라 주세요.';return}
+    if(n===0){out.innerHTML='면접이 <b>오늘</b>입니다. 지금 바로 전화 주세요.';return}
+    out.innerHTML='면접까지 <b>D-'+n+'</b> 남았습니다. 상담 때 이 날짜를 말씀해 주세요.';
+  });
+
+  // 확대 보기
+  var dlg=document.getElementById('viewer'),vi=document.getElementById('viewer-img'),vc=document.getElementById('viewer-cap');
+  document.querySelectorAll('[data-full]').forEach(function(b){
+    b.addEventListener('click',function(){
+      vi.src=b.dataset.full;vi.alt=b.dataset.cap||'';vc.textContent=b.dataset.cap||'';
+      if(dlg.showModal){dlg.showModal()}
+    });
+  });
+  document.getElementById('viewer-close').addEventListener('click',function(){dlg.close()});
+  dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close()});
+
+  // 번호 복사
+  var cb=document.getElementById('copy-btn'),msg=document.getElementById('copied'),ph=document.getElementById('phone');
+  cb.addEventListener('click',function(){
+    function fallback(){var r=document.createRange();r.selectNodeContents(ph);var s=getSelection();s.removeAllRanges();s.addRange(r);msg.textContent='번호를 선택했습니다. 복사해서 사용하세요.'}
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText('010-2441-3456').then(function(){msg.textContent='번호를 복사했습니다.'},fallback);
+    }else{fallback()}
+  });
+})();
+</script>
+</body>
+</html>
