@@ -738,7 +738,9 @@ html.lenis,html.lenis body{height:auto}
   g.set(heroLines,{yPercent:102});g.set([h1Lines,leadLines],{yPercent:102});
   g.set('.hero .label,.hero-cta,.stats,.chapter-tag',{autoAlpha:0,y:16});
   var portraitShell=document.querySelector('.portrait .ph');
-  var portraitIn=portraitShell?prepImg(portraitShell):null;
+  var portraitImg=portraitShell?portraitShell.querySelector('img'):null;
+  if(portraitShell){g.set(portraitShell,{clipPath:'inset(100% 0% 0% 0%)'});g.set(portraitImg,{scale:1.35,transformOrigin:'50% 70%'})}
+  var portraitIn=portraitShell?function(){var t=g.timeline();t.to(portraitShell,{clipPath:'inset(0% 0% 0% 0%)',duration:1.7*k,ease:'expo.inOut'},0).to(portraitImg,{scale:1,duration:2.6*k,ease:'expo.out'},.25);return t}:null;
   function heroIn(){
     var tl=g.timeline();
     tl.to('.hero .label',{autoAlpha:1,y:0,duration:.8,ease:'power2.out'},0)
@@ -772,12 +774,37 @@ html.lenis,html.lenis body{height:auto}
     var ls=el.querySelectorAll('.ln>span');g.set(ls,{yPercent:102});
     ScrollTrigger.create({trigger:el,start:'top 88%',once:true,onEnter:function(){g.fromTo(ls,{yPercent:102},{yPercent:0,duration:1.7*k,ease:'power4.out',stagger:.09})}});
   });
-  // 스크롤 이미지 리빌
-  [].slice.call(document.querySelectorAll('.scene-ph,.sheet,.mails figure .zoom,.shots figure .zoom')).forEach(function(el){
-    var shell=el;
-    if(el.classList.contains('zoom')){var w=document.createElement('div');el.parentNode.insertBefore(w,el);w.appendChild(el);shell=w}
-    var play=prepImg(shell);
-    ScrollTrigger.create({trigger:shell,start:'top 88%',once:true,onEnter:play});
+  // 스크롤 이미지 연출: 종류마다 다르게 움직입니다
+  // 1) 인물 사진: 스크롤에 따라 천천히 따라오는 패럴랙스
+  if(portraitImg){g.to(portraitImg,{yPercent:7,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}})}
+  // 2) 업무 장면 사진: 하나는 위에서 아래로, 하나는 가운데서 양옆으로 열리고, 이후 스크롤에 맞춰 사진 안쪽이 미세하게 움직입니다
+  [].slice.call(document.querySelectorAll('.scene-ph')).forEach(function(ph,i){
+    var img=ph.querySelector('img');
+    var from=i===0?'inset(0% 0% 100% 0%)':'inset(0% 50% 0% 50%)';
+    g.set(ph,{clipPath:from});g.set(img,{scale:1.4});
+    ScrollTrigger.create({trigger:ph,start:'top 85%',once:true,onEnter:function(){
+      g.to(ph,{clipPath:'inset(0% 0% 0% 0%)',duration:(i===0?1.5:1.8)*k,ease:'expo.inOut',delay:i*.15});
+      g.to(img,{scale:1.12,duration:2.4*k,ease:'expo.out',delay:i*.15});
+    }});
+    g.fromTo(img,{yPercent:-5},{yPercent:5,ease:'none',scrollTrigger:{trigger:ph,start:'top bottom',end:'bottom top',scrub:1.2}});
+  });
+  // 3) 학력 문서: 종이를 내려놓듯 살짝 기울어진 채 올라와 바로 섭니다
+  [].slice.call(document.querySelectorAll('.sheet')).forEach(function(sh,i){
+    var img=sh.querySelector('img');
+    g.set(sh,{autoAlpha:0,y:90,rotation:i%2?2.2:-2.2,transformOrigin:i%2?'0% 100%':'100% 100%'});
+    if(img)g.set(img,{scale:1.08});
+    ScrollTrigger.create({trigger:sh,start:'top 90%',once:true,onEnter:function(){
+      g.to(sh,{autoAlpha:1,y:0,rotation:0,duration:1.5*k,ease:'power4.out',clearProps:'transform'});
+      if(img)g.to(img,{scale:1,duration:2*k,ease:'power3.out'});
+    }});
+  });
+  // 4) 합격 캡처·감사 메일: 카드가 한 장씩 엇갈려 튀어 오릅니다
+  [].slice.call(document.querySelectorAll('.mails,.shots')).forEach(function(box){
+    var cards=box.querySelectorAll('figure');
+    g.set(cards,{autoAlpha:0,yPercent:18,rotation:function(i){return i%2?4:-3}});
+    ScrollTrigger.create({trigger:box,start:'top 85%',once:true,onEnter:function(){
+      g.to(cards,{autoAlpha:1,yPercent:0,rotation:0,duration:1.4*k,ease:'back.out(1.4)',stagger:.18,clearProps:'transform'});
+    }});
   });
   // 줄 형태로 차례로 올라오는 목록
   [].slice.call(document.querySelectorAll('.client-list,.price tbody,.facts')).forEach(function(list){
