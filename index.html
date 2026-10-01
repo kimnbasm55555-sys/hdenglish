@@ -301,6 +301,25 @@ dialog button{font:inherit;background:none;border:1px solid var(--ink);color:var
 @media (prefers-reduced-motion:reduce){
   .hero-name .ln>span,.portrait .ph img,.big-title.reveal .ln>span,.strip,.sheet .zoom img,.portrait .ph{animation:none!important}
 }
+
+.scenes{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:28px;margin-top:64px;align-items:start}
+.scene.s2{margin-top:96px}
+.scene-ph{overflow:hidden;background:var(--paper-2)}
+.scene-ph img{width:100%;height:auto;aspect-ratio:1264/848;object-fit:cover}
+.scene figcaption{display:grid;gap:4px;margin-top:14px;max-width:34em}
+.scene figcaption b{font-family:var(--f-kr-display);font-weight:700;font-size:20px}
+.scene figcaption span:last-child{font-size:14px;color:var(--mute)}
+.scene-note{margin-top:18px;font-size:12px;color:var(--mute);text-align:right}
+@supports (animation-timeline:view()){
+  .scene-ph img{animation:sceneIn linear both;animation-timeline:view();animation-range:entry 0% cover 45%}
+  @keyframes sceneIn{from{transform:scale(1.15);clip-path:inset(18% 0 0 0)}to{transform:none;clip-path:inset(0)}}
+}
+@media (max-width:640px){
+  .scenes{grid-template-columns:1fr;gap:32px;margin-top:40px}
+  .scene.s2{margin-top:0}
+  .scene-note{text-align:left}
+}
+@media (prefers-reduced-motion:reduce){.scene-ph img{animation:none!important}}
 </style>
 </head>
 <body>
@@ -356,7 +375,17 @@ dialog button{font:inherit;background:none;border:1px solid var(--ink);color:var
     <div class="wrap">
       <div class="ch-head"><span class="no">CHAPTER II</span><span class="label muted">The Clients</span></div>
       <h2 class="big-title reveal"><span class="ln"><span>THE</span></span><span class="ln"><span>CLIENTS</span></span></h2>
-      <!-- 현장 사진 자리: 실제 강의·통역 사진이 생기면 이 아래에 그리드로 넣습니다. -->
+      <div class="scenes">
+        <figure class="scene rise">
+          <div class="scene-ph"><img src="img/scene-meeting.webp" alt="회의실에서 한국인 엔지니어와 외국인 엔지니어 사이를 통역하는 임희대 코치" loading="lazy" width="1264" height="848"></div>
+          <figcaption><span class="label muted">Technical Interpretation</span><b>기술 회의 통역</b><span>한국 엔지니어와 해외 엔지니어가 같은 테이블에서 바로 결론을 낼 수 있도록 통역합니다.</span></figcaption>
+        </figure>
+        <figure class="scene s2 rise">
+          <div class="scene-ph"><img src="img/scene-tour.webp" alt="생산 시설 복도에서 외국인 엔지니어에게 설명하는 임희대 코치" loading="lazy" width="1264" height="848"></div>
+          <figcaption><span class="label muted">Site Communication</span><b>현장 안내와 설명</b><span>설비와 공정을 해외 파트너가 이해하기 쉬운 영어로 설명합니다.</span></figcaption>
+        </figure>
+      </div>
+      <p class="scene-note">위 사진은 업무 장면을 연출한 이미지입니다.</p>
       <div class="clients-split">
         <div class="rise">
           <p class="intro-text">회의실 안에서 바로 써야 하는 영어를 가르쳤습니다. 계약 조건, 기술 통역, 해외 바이어 발표까지 현장이 교실이었습니다.</p>
@@ -434,13 +463,7 @@ dialog button{font:inherit;background:none;border:1px solid var(--ink);color:var
   <section class="chapter" id="chapter-4">
     <div class="wrap">
       <div class="ch-head"><span class="no">CHAPTER IV</span><span class="label muted">Results</span></div>
-      <h2 class="big-title reveal split"><span class="ln"><span>THE</span></span>
-        <span class="strip" aria-hidden="true">
-          <img src="img/proof-kia.webp" alt="" style="object-position:50% 34%" loading="lazy">
-          <img src="img/proof-kakao.webp" alt="" style="object-position:50% 90%" loading="lazy">
-          <img src="img/proof-lg-1.webp" alt="" style="object-position:50% 10%" loading="lazy">
-        </span>
-        <span class="ln"><span>RESULTS</span></span></h2>
+      <h2 class="big-title reveal"><span class="ln"><span>THE</span></span><span class="ln"><span>RESULTS</span></span></h2>
     </div>
     <div class="passed" aria-label="수강생 합격처">
       <div class="track" aria-hidden="true">
