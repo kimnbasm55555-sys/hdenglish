@@ -76,7 +76,7 @@ h1,h2,h3{margin:0;font-weight:400;text-wrap:balance}
 .btn.solid-ink{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 .btn .n{font-family:var(--f-mono);font-weight:500}
 .portrait{position:relative;align-self:end;justify-self:end;width:100%;max-width:440px;display:flex;flex-direction:column;justify-content:flex-end}
-.portrait img{width:100%;height:auto;aspect-ratio:936/1500;object-fit:cover;object-position:center top;background:#fff}
+.portrait img{width:100%;height:auto;aspect-ratio:765/1024;object-fit:cover;object-position:center top;background:#fff}
 .portrait figcaption{display:flex;justify-content:space-between;padding-block:12px 18px;font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;color:var(--mute-dark)}
 .chapter-tag{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--rule-dark);padding-block:18px 20px;font-family:var(--f-display);font-size:18px;letter-spacing:.06em}
 .chapter-tag .label{color:var(--mute-dark)}
@@ -229,7 +229,6 @@ dialog button{font:inherit;background:none;border:1px solid var(--ink);color:var
 .rise{transition:transform .9s cubic-bezier(.2,.7,.2,1)}
 .js .rise:not(.in){transform:translateY(36px)}
 @supports (animation-timeline:view()){
-  .big-title.scale{animation:grow linear both;animation-timeline:view();animation-range:entry 0% cover 45%}
   @keyframes grow{from{transform:scale(.82);letter-spacing:.02em}to{transform:scale(1);letter-spacing:-.035em}}
 }
 
@@ -250,8 +249,6 @@ dialog button{font:inherit;background:none;border:1px solid var(--ink);color:var
   .bar-call{display:none}
 }
 @media (max-width:480px){
-  .mails,.shots{grid-template-columns:1fr}
-  .mails figure:nth-child(2),.shots figure:nth-child(2){margin-top:0}
   .client-list li{grid-template-columns:1fr}
   .client-list span{text-align:left}
 }
@@ -259,8 +256,50 @@ dialog button{font:inherit;background:none;border:1px solid var(--ink);color:var
   .intro{display:none}
   .track{animation:none}
   .rise,.js .rise:not(.in){transform:none;transition:none}
-  .big-title.scale{animation:none}
   html{scroll-behavior:auto}
+}
+
+/* 모션: 레퍼런스의 글자 마스크 리빌 · 사진 와이프 · 스크롤 확대 */
+.ln{display:block;overflow:hidden;padding-bottom:.04em}
+.ln>span{display:block}
+.hero-name .ln>span{animation:lineUp 1.1s cubic-bezier(.2,.75,.15,1) both}
+.hero-name .ln:nth-child(1)>span{animation-delay:1.75s}
+.hero-name .ln:nth-child(2)>span{animation-delay:1.88s}
+.hero-name .ln:nth-child(3)>span{animation-delay:2.05s}
+@keyframes lineUp{from{transform:translateY(105%)}to{transform:none}}
+.portrait .ph{overflow:hidden;background:#fff}
+.portrait .ph img{animation:wipe 1.5s 1.7s cubic-bezier(.65,0,.2,1) both}
+@keyframes wipe{from{clip-path:inset(100% 0 0 0);transform:scale(1.18)}to{clip-path:inset(0 0 0 0);transform:none}}
+.big-title .ln{display:block}
+.split{display:flex;flex-direction:column;align-items:center}
+.strip{display:flex;gap:10px;justify-content:center;margin-block:.12em;width:100%}
+.strip img{width:clamp(80px,13vw,170px);aspect-ratio:3/4;object-fit:cover;background:#fff;border:1px solid var(--rule)}
+.swipe{display:none;margin-top:10px;font-size:12px;color:var(--mute)}
+@supports (animation-timeline:view()){
+  .big-title.reveal .ln>span{animation:lineUp linear both;animation-timeline:view();animation-range:entry 5% cover 32%}
+  .strip{animation:stripGrow linear both;animation-timeline:view();animation-range:entry 0% cover 50%}
+  @keyframes stripGrow{from{transform:scale(.55);opacity:.2}to{transform:none;opacity:1}}
+  .sheet .zoom img{animation:settle linear both;animation-timeline:view();animation-range:entry 0% cover 40%}
+  @keyframes settle{from{transform:scale(1.07);filter:grayscale(1)}to{transform:none;filter:none}}
+  .sheet .zoom{overflow:hidden}
+  .portrait .ph{animation:drift linear both;animation-timeline:scroll(root);animation-range:0 900px}
+  @keyframes drift{to{transform:translateY(60px)}}
+}
+@media (max-width:640px){
+  .shots,.mails{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin-inline:-20px;padding-inline:20px;scrollbar-width:none}
+  .shots::-webkit-scrollbar,.mails::-webkit-scrollbar{display:none}
+  .shots figure,.mails figure{flex:0 0 76%;scroll-snap-align:start;margin-top:0!important}
+  .shots .zoom,.mails .zoom{aspect-ratio:1/1;overflow:hidden;position:relative}
+  .shots .zoom img,.mails .zoom img{width:100%;height:100%;object-fit:cover;object-position:var(--pos,50% 0)}
+  .swipe{display:block}
+  .sheet.portrait-doc .zoom{aspect-ratio:4/3;overflow:hidden;position:relative}
+  .sheet.portrait-doc .zoom img{width:100%;height:100%;object-fit:cover;object-position:top}
+  .sheet .zoom::after,.shots .zoom::after,.mails .zoom::after{content:"전체 보기";position:absolute;right:8px;bottom:8px;background:var(--ink);color:var(--paper);font-family:var(--f-body);font-size:12px;padding:4px 10px}
+  .sheet .zoom{position:relative}
+  .strip img{width:26vw}
+}
+@media (prefers-reduced-motion:reduce){
+  .hero-name .ln>span,.portrait .ph img,.big-title.reveal .ln>span,.strip,.sheet .zoom img,.portrait .ph{animation:none!important}
 }
 </style>
 </head>
@@ -282,7 +321,7 @@ dialog button{font:inherit;background:none;border:1px solid var(--ink);color:var
     <div class="hero-grid">
       <div>
         <p class="label muted">Business English Coach · Since 2008</p>
-        <p class="hero-name"><span>LIM</span><span>HEE DAE</span><span class="ko">임희대 · HD영어</span></p>
+        <p class="hero-name"><span class="ln"><span>LIM</span></span><span class="ln"><span>HEE DAE</span></span><span class="ko ln"><span>임희대 · HD영어</span></span></p>
         <h1>대기업 임원의 영어를 코칭한 18년, 이제 당신의 면접 차례입니다.</h1>
         <p class="hero-lead">LG전자 상주 강사, SK하이닉스 임원 수업, 한국수출입은행 비즈니스 영어. 현장에서 쌓은 방식으로 영어 인터뷰와 발표를 준비합니다.</p>
         <div class="hero-cta">
@@ -291,7 +330,7 @@ dialog button{font:inherit;background:none;border:1px solid var(--ink);color:var
         </div>
       </div>
       <figure class="portrait">
-        <img src="img/portrait.webp" alt="임희대 코치 인물 사진" width="936" height="1500">
+        <div class="ph"><img src="img/portrait.webp" alt="임희대 코치 인물 사진" width="765" height="1024"></div>
         <figcaption><span>LIM HEE DAE</span><span>PENN STATE · TESOL</span></figcaption>
       </figure>
     </div>
@@ -316,7 +355,7 @@ dialog button{font:inherit;background:none;border:1px solid var(--ink);color:var
   <section class="chapter" id="chapter-2">
     <div class="wrap">
       <div class="ch-head"><span class="no">CHAPTER II</span><span class="label muted">The Clients</span></div>
-      <h2 class="big-title scale">THE<br>CLIENTS</h2>
+      <h2 class="big-title reveal"><span class="ln"><span>THE</span></span><span class="ln"><span>CLIENTS</span></span></h2>
       <!-- 현장 사진 자리: 실제 강의·통역 사진이 생기면 이 아래에 그리드로 넣습니다. -->
       <div class="clients-split">
         <div class="rise">
@@ -395,7 +434,13 @@ dialog button{font:inherit;background:none;border:1px solid var(--ink);color:var
   <section class="chapter" id="chapter-4">
     <div class="wrap">
       <div class="ch-head"><span class="no">CHAPTER IV</span><span class="label muted">Results</span></div>
-      <h2 class="big-title scale">THE<br>RESULTS</h2>
+      <h2 class="big-title reveal split"><span class="ln"><span>THE</span></span>
+        <span class="strip" aria-hidden="true">
+          <img src="img/proof-kia.webp" alt="" style="object-position:50% 34%" loading="lazy">
+          <img src="img/proof-kakao.webp" alt="" style="object-position:50% 90%" loading="lazy">
+          <img src="img/proof-lg-1.webp" alt="" style="object-position:50% 10%" loading="lazy">
+        </span>
+        <span class="ln"><span>RESULTS</span></span></h2>
     </div>
     <div class="passed" aria-label="수강생 합격처">
       <div class="track" aria-hidden="true">
@@ -422,14 +467,15 @@ dialog button{font:inherit;background:none;border:1px solid var(--ink);color:var
         </div>
         <div class="shots rise">
           <figure>
-            <button class="zoom" type="button" data-full="img/proof-kia.webp" data-cap="기아 실무 PT 면접 합격 소식"><img src="img/proof-kia.webp" alt="기아 채용 결과 안내 화면과 수강생 메시지" loading="lazy" width="620" height="997"></button>
+            <button class="zoom" type="button" style="--pos:50% 80%" data-full="img/proof-kia.webp" data-cap="기아 실무 PT 면접 합격 소식"><img src="img/proof-kia.webp" alt="기아 채용 결과 안내 화면과 수강생 메시지" loading="lazy" width="620" height="997"></button>
             <figcaption class="cap">기아 실무 PT 면접 합격 소식입니다.</figcaption>
           </figure>
           <figure>
-            <button class="zoom" type="button" data-full="img/proof-kakao.webp" data-cap="인터뷰를 마친 수강생의 메시지"><img src="img/proof-kakao.webp" alt="인터뷰를 마친 수강생의 카카오톡 메시지" loading="lazy" width="475" height="1000"></button>
+            <button class="zoom" type="button" style="--pos:50% 88%" data-full="img/proof-kakao.webp" data-cap="인터뷰를 마친 수강생의 메시지"><img src="img/proof-kakao.webp" alt="인터뷰를 마친 수강생의 카카오톡 메시지" loading="lazy" width="475" height="1000"></button>
             <figcaption class="cap">"딱 저희 공부한 질문들만 나왔습니다."</figcaption>
           </figure>
         </div>
+        <p class="swipe">옆으로 넘겨 보세요. 누르면 전체 화면으로 볼 수 있습니다.</p>
       </div>
     </div>
   </section>
@@ -535,7 +581,7 @@ dialog button{font:inherit;background:none;border:1px solid var(--ink);color:var
   <section class="next dark" id="contact">
     <div class="wrap">
       <p class="label muted">Where your next story begins</p>
-      <h2 class="big-title" style="margin-top:16px">NEXT<br>CHAPTER</h2>
+      <h2 class="big-title reveal" style="margin-top:16px"><span class="ln"><span>NEXT</span></span><span class="ln"><span>CHAPTER</span></span></h2>
       <div class="next-grid">
         <div>
           <h2>당신의 다음 챕터는 영어 면접입니다.</h2>
